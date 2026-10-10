@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pixel Wall</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 24px 16px;
+  background: #111827;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+h1 { color: #f9a8d4; letter-spacing: 3px; }
+p { color: #cbd5e1; line-height: 1.6; }
+.wall {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 4px;
+  max-width: 420px;
+  margin: 28px auto;
+}
+.pixel {
+  aspect-ratio: 1;
+  border: 1px solid #ffffff30;
+  border-radius: 4px;
+  background: #273449;
+  cursor: pointer;
+}
+.pixel:nth-child(3n) { background: #f9a8d4; }
+.pixel:nth-child(4n) { background: #a7f3d0; }
+.pixel:nth-child(7n) { background: #93c5fd; }
+button {
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 10px;
+  background: #f9a8d4;
+  color: #111827;
+  font-weight: bold;
+}
+footer { margin-top: 32px; color: #94a3b8; font-size: 12px; }
+</style>
+</head>
+<body>
+<h1>PIXEL WALL</h1>
+<p>A little space for your brand.</p>
+<p>Setiap pixel punya kesempatan untuk bersinar.</p>
+
+<div class="wall" id="wall"></div>
+
+<button onclick="alert('Terima kasih sudah tertarik! Pemesanan iklan segera hadir.')">
+Pasang Iklan
+</button>
+
+<footer>Pixel Wall · Proyek pertama kita</footer>
+
+<script>
+const wall = document.getElementById("wall");
+for (let i = 0; i < 100; i++) {
+  const pixel = document.createElement("div");
+  pixel.className = "pixel";
+  pixel.title = "Pixel #" + (i + 1);
+  wall.appendChild(pixel);
+}
+</script>
+</body>
+</html>
